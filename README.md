@@ -1,9 +1,9 @@
-Synopsis
+<h1>Synopsis</h1>
 
 This is a small python script that was written for the CHIP to have it used for the MeArm robotic arm (http://www.instructables.com/id/MeArm-Robot-Arm-Your-Robot-V10). It uses a PCA9685 i2c-controlled PWM driver to control the 4 servos, and takes any command through a standard web browser interface. 
 
 
-Installation
+<h1>Installation</h1>
 
 First setup WIFI, as described here: https://docs.getchip.com/chip.html#wifi-connection. Install the Adafruit Python PCA9685 library from source:<br />
     sudo apt-get install git build-essential python-dev python<br />
@@ -16,10 +16,10 @@ The default I2C bus is now i2c-2 as i2c-1 was removed in OS 1.1 (4.4 Kernel), pl
     python httpd.py
 
     
-Contributors
+<h1>Contributors</h1>
 
 - Jan van den Brink (@janvdbrink)
 
-License
+<h1>License</h1>
 
 MIT License. (c) Jan van den Brink
