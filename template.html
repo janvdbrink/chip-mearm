@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="template.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.roundslider/1.3/roundslider.min.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="nipplejs.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.roundslider/1.3/roundslider.min.js"></script>
+
+	<script>
+	$(function() {
+	
+	Number.prototype.map = function (in_min, in_max, out_min, out_max) {
+		return parseInt((this - in_min) * (out_max - out_min) / (in_max - in_min) + out_min);
+	}
+
+	var leftStick = nipplejs.create({
+		zone: document.getElementById('leftStick'),
+		mode: 'static',
+		position: {left: '50%', top: '50%'},
+		color: 'Red'
+	});	
+
+	var rightStick = nipplejs.create({
+		zone: document.getElementById('rightStick'),
+		mode: 'static',
+		position: {left: '50%', top: '50%'},
+		color: 'Red'
+	});	
+	
+	leftStick.on('dir:up dir:down end', function(evt, data) {
+		$.post("/", { left: evt.type })
+	});
+
+	rightStick.on('dir:up dir:down end', function(evt, data) {
+		$.post("/", { right: evt.type })
+	});
+	
+	$("#rotationCtrl").roundSlider({
+		sliderType: "min-range",
+		width: 33,
+		radius: "100",
+		value: 90,
+		showTooltip: false,
+		mouseScrollAction: true,
+		max: "180",
+		step: "6",
+		circleShape: "half-top",
+
+		change: function (args) {
+			$.post("/", { middle: args.value})
+		}
+	});
+	
+	$("#openClaw").mousedown(function() {
+		$.post("/", { claw: 'dir:up'})
+		return false;
+	}).mouseup(function() {
+		$.post("/", { claw: 'end'})
+		return false;
+	});
+	
+	$("#closeClaw").mousedown(function() {
+		$.post("/", { claw: 'dir:down'})
+		return false;
+	}).mouseup(function() {
+		$.post("/", { claw: 'end'})	
+		return false;
+	});
+
+    $("#fullscreen").click(function() {
+		var elem = document.getElementById("body");
+        req = elem.requestFullScreen || elem.webkitRequestFullScreen || elem.mozRequestFullScreen;
+        req.call(elem);
+    });	
+	
+	});
+	</script>
+	
+</head>
+<body id="body">
+	<div id="container1">
+	<div id="rotationCtrlLabel">rotation control</div>	
+	<div id="leftStick" class="joystick"></div>
+	<div id="leftStickLabel">left control</div>
+	<div id="rightStick" class="joystick"></div>
+	<div id="rightStickLabel">right control</div>
+	<div id="rotationCtrl"></div>
+	</div>
+	<div id="container2">
+	<div id="container2Label">Claw controls</div>
+	<button id="openClaw" class="btn">Close</button>	
+	<button id="closeClaw" class="btn">Open</button>
+	</div>
+	<div id="container3">
+	<span id="footerText">&copy; 2017 Stan van den Brink - </span><a href="#" id="fullscreen">full screen</button>
+	</div>
+</body>
+</html>

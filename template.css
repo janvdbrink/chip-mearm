@@ -1,0 +1,176 @@
+/* Samsung S6: 640x360 */
+
+a:link {
+	font: 12px Helvetica, Arial, sans-serif;
+	color: LightSteelBlue;
+	text-decoration: none;
+}
+
+a:visited {
+	font: 12px Helvetica, Arial, sans-serif;
+	color: LightSteelBlue;
+	text-decoration: none;
+}
+
+a:hover {
+	font: 12px Helvetica, Arial, sans-serif;
+	color: Red;
+	text-decoration: none;	
+}
+
+a:active {
+	font: 12px Helvetica, Arial, sans-serif;
+	color: LightSteelBlue;
+	text-decoration: none;	
+}
+
+body {
+	background-color: white;
+	font: 12px Helvetica, Arial, sans-serif;
+	color: White;
+}
+
+.btn {
+	border-radius: 20px;
+	font-family: Arial;
+	color: White;
+	font-size: 12px;
+	background: DodgerBlue;
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+	border: none;
+	width:100px;
+}
+
+.btn:hover {
+	background: Red;
+	text-decoration: none;
+}
+
+.joystick {
+	background: DodgerBlue;
+	border-radius: 50%;
+	height: 100px;
+	width: 100px;
+	text-align: center;
+	font: 12px Helvetica, Arial, sans-serif;
+}
+
+.rs-control .rs-range-color {
+	background-color: DodgerBlue;
+}
+.rs-control .rs-path-color {
+	background-color: White;
+}
+.rs-control .rs-handle {
+	background-color: Red;
+}
+.rs-control .rs-bg-color {
+	background-color: LightSteelBlue;
+}
+
+#container1 {
+	position:absolute;
+	left:10px;
+	top:10px;
+	right:10px;
+	height: 140px;
+	border: 1px solid MidnightBlue;
+	background-color:LightSteelBlue;
+}
+
+#container2 {
+	position:absolute;
+	left:10px;
+	top:160px;
+	right:10px;
+	height: 50px;
+	border: 1px solid MidnightBlue;
+	background-color:LightSteelBlue;
+}
+
+#container3 {
+	position:absolute;
+	left:10px;
+	top:220px;
+	right:10px;
+	text-align:center;
+	padding:10px;
+	background-color: rgba(255, 255, 255, 0);
+}
+
+#container2Label {
+	position:absolute;
+	left:110px;
+	right: 110px;
+	margin:auto;
+	text-align: center;
+	top:10px;
+	bottom:10px;
+	line-height: 30px;
+	vertical-align:middle;
+}
+
+#leftStick {
+	position:absolute;
+	left:10px;
+	top:10px;
+}
+
+#leftStickLabel {
+	position:absolute;
+	left:10px;
+	width:100px;
+	text-align:center;
+	bottom:10px;
+}
+
+#rotationCtrl {
+	position:absolute;
+	left:110px;
+	right:110px;
+	margin:auto;
+	top:10px;
+}
+
+#rotationCtrlLabel {
+	position:absolute;
+	left:110px;
+	right:110px;
+	text-align:center;
+	margin:auto;
+	bottom:10px;
+}
+
+#rightStick {
+	position:absolute;
+	right:10px;
+	top:10px;
+}
+
+#rightStickLabel {
+	position:absolute;
+	right:10px;
+	width:100px;
+	text-align:center;
+	bottom:10px;
+}
+
+#openClaw {
+	position:absolute;
+	left:10px;
+	top:10px;
+	bottom:10px;
+}
+
+#closeClaw {
+	position:absolute;
+	right:10px;
+	top:10px;
+	bottom:10px;
+}
+
+#footerText {
+	font: 12px Helvetica, Arial, sans-serif;
+	color: LightSteelBlue;
+}	
